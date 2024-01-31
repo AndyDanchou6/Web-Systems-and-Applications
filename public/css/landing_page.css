@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #0F1035;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100vw;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #40A2D8;
+    padding: 10px 0;
+    width: 100vw;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #40A2D8;
+}
+
+#intro {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url("../bg_img/anime_landscape.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#tagline {
+    position: absolute;
+    top: 40%;
+    bottom: 60%;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+    text-shadow: 2px 2px #0F1035;
+}
+
+.about_wrap {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color:white;
+}
+
+#read {
+    color: white;
+    background-color: #0F1035;
+    position: absolute;
+    top: 30px;
+    margin-top: 0;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.about_header {
+    position: absolute;
+    color: black;
+    top: 20%;
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.about_contents {
+    position: absolute;
+    color: black;
+    top: 50%;
+    margin: auto; 
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#write {
+    color: white;
+    background-color: #0F1035;
+    position: absolute;
+    top: 30px;
+    margin-top: 0;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+#contacts {
+    width: 100vw;
+    height: 450px;
+    position: relative;
+    background-color: white;
+}
+
+#more_info {
+    color: white;
+    background-color: #0F1035;
+    position: absolute;
+    top: 30px;
+    margin-top: 0;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+#contact_info {
+    position: absolute;
+    top: 120px;
+    left: 45%;
+    margin: auto;
+    text-align: center;
+}
+
+#contacts p {
+    color: black;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+#contact_info img {
+    height: 30px;
+    width: 30px;
+}
+
+#footer {
+    background-color: white;
+    padding: 10px;
+}
+
+#footer h4 {
+    text-align: center;
+}
+
+#footer p {
+    text-align: center;
+}
