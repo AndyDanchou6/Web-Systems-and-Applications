@@ -15,10 +15,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('admin.manage') }}">Manage Accounts</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.manage') }}">Accounts</a></li>
                         <li><a class="dropdown-item" href="{{ route('admin.requests') }}">Requests</a></li>
-                        <li><a class="dropdown-item" href="{{ route('admin.chapter_updates') }}">Updates</a></li>
-                        <li><a class="dropdown-item" href="{{ route('admin.publish') }}">New Manga</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.chapter_updates') }}">Chapters</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.publish') }}">Publish</a></li>
                         <li><a class="dropdown-item" href="{{ route('admin.chap_update') }}">Update Chapter</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
