@@ -60,7 +60,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     Route::get('/get_chapters{data}', [AdminController::class, 'chapters'])->name('chapters');
 });
 
-Route::prefix('user')->middleware('auth')->group(function () {
+Route::prefix('user')->middleware('auth', 'isUser')->group(function () {
     Route::get('/dashboard', [UserController::class, 'user_dashboard'])->name('user.dashboard');
     Route::get('/action', [UserController::class, 'user_action'])->name('user.action');
     Route::get('/romcom', [UserController::class, 'user_romcom'])->name('user.romcom');
@@ -73,6 +73,7 @@ Route::prefix('user')->middleware('auth')->group(function () {
     Route::post('/publish', [UserController::class, 'user_publish_post'])->name('user.publish_post');
     Route::get('/manga_details{data}', [UserController::class, 'manga_details'])->name('user.manga_details');
     Route::get('/mylibrary', [UserController::class, 'library'])->name('user.library');
+    Route::get('/mylibrarydelete{data}', [UserController::class, 'librarydelete'])->name('user.request_details_delete');
     Route::get('/request_details{data}', [UserController::class, 'request_details'])->name('user.request_details');
     Route::get('/approved_requests', [UserController::class, 'approved_req'])->name('user.approved_requests');
     Route::get('/denied_requests', [UserController::class, 'denied_req'])->name('user.denied_requests');

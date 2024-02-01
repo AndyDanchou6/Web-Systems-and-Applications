@@ -61,6 +61,7 @@
                                             <td>{{ $reqs->date_of_request }}</td>
                                             <td>{{ $reqs->date_published }}</td>
                                             <td>
+                                                <a href="{{ route('user.request_details_delete', ['data' => $reqs->id]) }}" class="btn btn-danger">Delete</a>
                                                 <a href="{{ route('user.request_details', ['data' => $reqs]) }}" class="btn btn-success">Details</a>
                                             </td>
                                         </tr>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!-- Styles -->
+        <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    </head>
+    <body class="antialiased">
+        <div class="container my-5">
+            <div class="text-center">
+              <h1 class="display-4 text-center mb-3" id='quotes'>Loading Quote...</h1>
+              <p id="author" class="display-5" style="font-style: italic">Loading Author...</p>
+              <button class="btn btn-primary my-3" id="get">New Quote</button>
+              {{-- <button class="btn btn-info" id="post">POST</button>
+              <button class="btn btn-warning" id="update">PUT/PATCH</button>
+              <button class="btn btn-danger" id="delete">DELETE</button>
+              <button class="btn btn-secondary" id="sim">Sim Requests</button>
+              <button class="btn btn-secondary" id="headers"> --}}
+                {{-- Custom Headers
+              </button>
+              <button class="btn btn-secondary" id="transform">
+                Transform
+              </button>
+              <button class="btn btn-secondary" id="error">
+                Error Handling
+              </button>
+              <button class="btn btn-secondary" id="cancel">
+                Cancel
+              </button> --}}
+            </div>
+            <hr />
+            <div id="res"></div>
+            <div id="output">
+
+            </div>
+          </div>
+        <script>
+            // document.querySelector('#get').addEventListener('click', getTodos);
+
+            const apiEndpoint = 'https://animechan.xyz/api/random';
+
+            window.addEventListener('load', axiosGet);
+
+            function axiosGet() {
+              axios.get(apiEndpoint).then(response => {
+                output(response);
+                // showOutput(response);
+                return response;
+              }).catch(error => {
+                const response = {
+                  data: {
+                    quote: 'Uhh uhh uhh',
+                    character: 'Dev0x13',
+                  }
+                };
+                output(response);
+                console.error(error);
+              });
+            }
+
+
+            function output(response) {
+              const container = document.querySelector('#quotes');
+              console.log(response.data);
+              container.innerText = response.data.quote;
+              document.querySelector('#author').innerText = "\"" + response.data.character + "\"";
+            }
+
+            // function showOutput(res) {
+            //     document.getElementById('res').innerHTML = `
+            //     <div class="card card-body mb-4">
+            //         <h5>Status: ${res.status}</h5>
+            //     </div>
+
+            //     <div class="card mt-3">
+            //         <div class="card-header">
+            //         Headers
+            //         </div>
+            //         <div class="card-body">
+            //         <pre>${JSON.stringify(res.headers, null, 2)}</pre>
+            //         </div>
+            //     </div>
+
+            //     <div class="card mt-3">
+            //         <div class="card-header">
+            //         Data
+            //         </div>
+            //         <div class="card-body">
+            //         <pre>${JSON.stringify(res.data, null, 2)}</pre>
+            //         </div>
+            //     </div>
+
+            //     <div class="card mt-3">
+            //         <div class="card-header">
+            //         Config
+            //         </div>
+            //         <div class="card-body">
+            //         <pre>${JSON.stringify(res.config, null, 2)}</pre>
+            //         </div>
+            //     </div>
+            //     `;
+            // }
+
+            document.querySelector('#get').addEventListener('click', axiosGet);
+            // document.querySelector('#get').addEventListener('click', () => {
+            //   // axios({
+            //   //   method: 'GET',
+            //   //   url: 'https://jsonplaceholder.typicode.com/posts?_limit=5',
+            //   //   // params: {
+            //   //   // }
+            //   // }).then((response) => {
+            //   //   console.log(response);
+            //   // }).catch((error) => console.error(error))
+
+            //   axios.get('https://jsonplaceholder.typicode.com/posts?_limit=5').then(response => {
+            //     console.log(response.data);
+            //     showOutput(response);
+            //     return response;
+            //   }).catch(error => console.error(error));
+            // });
+
+            // function getTodos() {
+            // //     axios({
+            // //         method: 'get',
+            // //         url: 'https://jsonplaceholder.typicode.com/todos',
+            // //         params: {
+            // //         _limit: 5
+            // //         }
+            // //     })
+            // //         .then(res => {
+            // //             console.log(res);
+            // //             showOutput(res);
+            // //         } )
+            // //         .catch(err => console.error(err));
+            // axios.get('https://jsonplaceholder.typicode.com/todos').then((res) => {
+            //   console.log(res);
+            //   showOutput(res);
+            //   return res;
+            // }).catch((err) => console.error(err));
+            // }
+
+            // window.addEventListener('load', getTodos);
+
+            // document.getElementById('post').addEventListener('click', addTodo);
+            // document.getElementById('update').addEventListener('click', updateTodo);
+            // document.getElementById('delete').addEventListener('click', removeTodo);
+            // document.getElementById('sim').addEventListener('click', getData);
+            // document.getElementById('headers').addEventListener('click', customHeaders);
+            // document
+            //     .getElementById('transform')
+            //     .addEventListener('click', transformResponse);
+            // document.getElementById('error').addEventListener('click', errorHandling);
+            // document.getElementById('cancel').addEventListener('click', cancelToken);
+        </script>
+    </body>
+</html>

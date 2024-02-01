@@ -92,6 +92,14 @@ class UserController extends Controller
         // dd($req);
     }
 
+    public function librarydelete($data) {
+        $delete = RequestsModel::find($data);
+        $delete->delete();
+        return redirect()->back();
+        //dd($delete);
+    }
+
+
     public function request_details(RequestsModel $data) {
         $manga = MangaModel::where('title', $data['title'])->first();
 

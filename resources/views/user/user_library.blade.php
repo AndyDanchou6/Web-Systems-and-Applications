@@ -72,6 +72,7 @@
                                            
                                             <td>
                                                 <a href="{{ route('user.request_details', ['data' => $req]) }}" class="btn btn-success">Details</a>
+                                                <a href="{{ route('user.request_details_delete', ['data' => $req->id]) }}" class="btn btn-danger">Delete</a>
                                             </td>
                                             
                                         </tr>

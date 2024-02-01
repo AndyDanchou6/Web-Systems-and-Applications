@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class AdminMiddleWare
+class UserMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,10 @@ class AdminMiddleWare
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {   
-        if (Auth::check() && Auth::user()->role == '1') {
-                return $next($request);
-        } 
+    {
+        if (Auth::check() && Auth::user()->role == '0') {
+        return $next($request);
+        }
         return redirect()->back();
     }
 }
