@@ -55,7 +55,13 @@ class UserController extends Controller
     public function user_publish_post(Request $request) {
         $id = Auth::id();
         if ($request->title == !null && $request->author == !null && $request->genre == !null && $request->date_of_request == !null) {
+            
+            $exists = MangaModel::where('title', $request->title)->first();
 
+            if ($exists) {
+                return redirect(route('user.publish'));
+            }
+            
             $manga = DB::table('requests')->insert([
                 'title' => $request->title,
                 'author' => $request->author,
@@ -93,10 +99,19 @@ class UserController extends Controller
     }
 
     public function librarydelete($data) {
-        $delete = RequestsModel::find($data);
-        $delete->delete();
+        $request = RequestsModel::find($data);
+        $req_title = $request->title;
+        $request->delete();
+
+        $manga = MangaModel::where('title', $req_title)->first();
+        
+        if ($manga == !null) {
+            $manga->delete();
+            return redirect()->back();
+        }
+
         return redirect()->back();
-        //dd($delete);
+        //dd($manga);
     }
 
 

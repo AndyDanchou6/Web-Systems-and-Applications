@@ -13,9 +13,9 @@
         <h1>Kore Wa Mendo Desu</h1>
     </header>
     <nav>
-        <a href="{{ route('login') }}">Home</a>
         <a href="#about">About</a>
         <a href="#contacts">Contacts</a>
+        <a href="{{ route('login') }}">Sign In</a>
     </nav>
     <div id="intro">
         <p id="tagline">Escape From Reality Into The World Of Dreams And Fantasy</p>

@@ -33,6 +33,7 @@
                                             <td>{{  $chapter->date}}</td>
                                             <td>
                                                 <a href="{{ route('admin.view_chapters', ['data' => $chapter->id]) }}" class="btn btn-success">Details</a>
+                                                <a href="{{ route('admin.deny_chapter', ['id' => $chapter->id]) }}" class="btn btn-danger">Deny Request</a>
                                             </td>
                                             
                                         </tr>

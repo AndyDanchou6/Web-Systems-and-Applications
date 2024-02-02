@@ -19,7 +19,7 @@
                         <li><a class="dropdown-item" href="{{ route('admin.requests') }}">Requests</a></li>
                         <li><a class="dropdown-item" href="{{ route('admin.chapter_updates') }}">Chapters</a></li>
                         <li><a class="dropdown-item" href="{{ route('admin.publish') }}">Publish</a></li>
-                        <li><a class="dropdown-item" href="{{ route('admin.chap_update') }}">Update Chapter</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.chap_update') }}">My Novels</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                     </ul>

@@ -36,7 +36,8 @@
                                             <td>{{ $detail->genre }}</td>
                                             <td>{{ $detail->date_published }}</td>
                                             <td> 
-                                                <a href="{{ route('admin.add_chapter', ['data' => $detail->id]) }}" class="btn btn-success">Add Chapter</a>
+                                            <a href="{{ route('admin.add_chapter', ['data' => $detail->id]) }}" class="btn btn-success">Add Chapter</a>
+                                            <a href="{{ route('admin.delete', ['id' => $detail->id]) }}" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach

@@ -52,6 +52,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     Route::get('/chapter_updates', [AdminController::class, 'new_chaps'])->name('admin.chapter_updates');
     Route::get('/chapter_view{data}', [AdminController::class, 'view_chaps'])->name('admin.view_chapters');
     Route::post('/release_chapter', [AdminController::class, 'chap_release'])->name('admin.release_chapter');
+    Route::get('/deny_chapter{id}', [AdminController::class, 'chap_deny'])->name('admin.deny_chapter');
 
     Route::get('/chapter_news', [AdminController::class, 'chapter_list'])->name('admin.chap_update');
     Route::get('/chapter_add{data}', [AdminController::class, 'add_chap'])->name('admin.add_chapter');

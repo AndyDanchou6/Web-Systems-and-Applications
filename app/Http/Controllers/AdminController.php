@@ -143,8 +143,8 @@ class AdminController extends Controller
 
         $data = RequestsModel::find($id);
         $exists = MangaModel::where('title', $data->title)->first();
-        $i;
-        if ($exists == !null) {
+
+        if ($exists) {
             return redirect()->back();
         }
 
@@ -170,7 +170,7 @@ class AdminController extends Controller
 
             return redirect()->back();
         }
-        //dd($i);
+        dd($exists);
     }
 
     public function details(MangaModel $data) {
@@ -218,6 +218,15 @@ class AdminController extends Controller
         //dd($request['date']);
     }
 
+    public function chap_deny($id) {
+        $chapter = ChaptersModel::find($id);
+        $chapter->status = 2;
+        $chapter->save();
+
+        return redirect(route('admin.chapter_updates'));
+        //dd($chapter->status);
+    }
+
     public function chapter_list() {
         $admin = Auth::id();
         $admin_posts= MangaModel::where('user_id', $admin)->get();
@@ -256,7 +265,7 @@ class AdminController extends Controller
     }
 
     public function chapters($data) {
-        $chapter = ChaptersModel::where('manga_id', $data)->get();
+        $chapter = ChaptersModel::where('manga_id', $data)->where('status', 1)->get();
 
         return view('admin.admin_chapters', ['data' => $chapter]);
         //dd($chapter);
