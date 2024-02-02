@@ -84,5 +84,7 @@ Route::prefix('user')->middleware('auth', 'isUser')->group(function () {
     Route::get('/user_chapters{data}', [UserController::class, 'view_chapter'])->name('user.chapter_view');
     Route::get('/chapter_lists{data}', [UserController::class, 'chap_lists'])->name('user.chapter_lists');
     Route::get('/chapter_item{data}', [UserController::class, 'view_chapter'])->name('user.user_chapview');
+    Route::get('/upcoming', [UserController::class, 'upcoming'])->name('upcoming');
+    Route::get('/pendingdata', [UserController::class, 'pendingdata']);
 });
 

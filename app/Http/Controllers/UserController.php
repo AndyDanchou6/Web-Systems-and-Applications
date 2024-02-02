@@ -194,4 +194,13 @@ class UserController extends Controller
         return view('user.user_chaplists', ['data' => $chap]);
         //dd($chap);
     }
+
+    public function upcoming() {
+        return view('user.upcoming');
+    }
+
+    public function pendingdata() {
+        $data = RequestsModel::all();
+        return response()->json(['data' => $data]);
+    }
 }

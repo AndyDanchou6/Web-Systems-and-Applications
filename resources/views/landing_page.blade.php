@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kore Wa Mendo Desu</title>
     <link rel="stylesheet" href="{{ asset('css/landing_page.css') }}" />
+
+    <style>
+        /* Add some styling for smooth scrolling */
+        body {
+            scroll-behavior: smooth;
+        }
+
+        /* Style your navigation links */
+        nav a {
+            text-decoration: none;
+           
+            margin: 0 15px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,5 +69,30 @@
         <p>All rights Reserved 2024</p>
     </div>
 </body>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select all links inside the navigation
+            const navLinks = document.querySelectorAll('nav a');
 
+            // Add click event listener to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+
+                    if (this.getAttribute('href') === "{{ route('login') }}") {
+                    return; // Perform default navigation
+                }
+                    e.preventDefault();
+
+                    // Get the target section's id from the href attribute
+                    const targetId = this.getAttribute('href').substring(1);
+
+                    // Find the target section
+                    const targetSection = document.getElementById(targetId);
+
+                    // Scroll to the target section smoothly
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
 </html>

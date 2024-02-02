@@ -56,6 +56,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Other
                             </a>
+                            <a class="nav-link" href="{{ route('upcoming') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Upcoming Novels
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

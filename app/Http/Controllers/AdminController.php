@@ -251,6 +251,16 @@ class AdminController extends Controller
 
     public function chap_post(Request $request) {
 
+        $validate = [
+            'chapter_title' => $request['chapter_title'],
+            'date_published' => $request['date_published'],
+            'contents' => $request['contents']
+        ];
+
+        if ($validate['chapter_title'] == null || $validate['date_published'] == null || $validate['contents'] == null) {
+            return redirect()->back();
+        }
+
         $newChapter = DB::table('chapters')->insert([
             'chapter_title' => $request['chapter_title'],
             'date' => $request['date'],
@@ -261,7 +271,7 @@ class AdminController extends Controller
 
         return redirect(route('admin.dashboard'));
 
-        //dd($request['chapter_title']);
+        //dd($validate);
     }
 
     public function chapters($data) {

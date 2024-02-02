@@ -62,7 +62,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Konichiwa:</div>
-                        Admin Danchou
+                        <p>Welcome Admin, {{ auth()->user()->name }}</p>
                     </div>
                 </nav>
             </div>
