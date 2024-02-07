@@ -29,8 +29,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('chapters', function (Blueprint $table) {
+            $table->dropForeign(['manga_id']);
+            $table->dropColumn('manga_id');
+        });
         Schema::dropIfExists('chapters');
-        $table->dropForeign(['user_id']);
-        $table->dropColumn('user_id');
     }
 };
